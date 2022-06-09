@@ -15,3 +15,8 @@ polygon = PoolVector2Array( 0, -32, 40, 28, -40, 28 )
 
 [node name="LaserWeapon" parent="." instance=ExtResource( 3 )]
 position = Vector2( 0, -54 )
+
+[node name="RotationNode1" type="Node2D" parent="."]
+position = Vector2( 0, 1 )
+
+[node name="RotationNode2" type="Node2D" parent="."]
