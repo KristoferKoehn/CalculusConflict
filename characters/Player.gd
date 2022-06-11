@@ -4,7 +4,7 @@ var max_thrust = 400
 var velocity = Vector2(0,0)
 var velocity_damping = 1.02
 var acceleration = 15
-var rotation_speed = .9
+var rotation_speed = .8
 var rotation_max = 60
 var angular_velocity = 0
 var angular_damping = 1.15
@@ -27,11 +27,14 @@ func _physics_process(delta: float) -> void:
 			velocity = velocity.normalized() * max_thrust
 		else:
 			velocity += self.get_rotation_vector() * acceleration
-	
+		$EngineParticles.emitting = true
+	else:
+		$EngineParticles.emitting = false
 	rotation += delta * angular_velocity
 	angular_velocity = angular_velocity/angular_damping
 	velocity = velocity / velocity_damping
 	move_and_collide(velocity * delta)
+
 
 func _unhandled_key_input(event):
 	if (event.is_action_pressed("shoot")):
