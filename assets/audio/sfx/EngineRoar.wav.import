@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/EngineRoar.wav-cd5fd4d63a8d19c965772a62ee1180bf.sample"
+
+[deps]
+
+source_file="res://assets/audio/sfx/EngineRoar.wav"
+dest_files=[ "res://.import/EngineRoar.wav-cd5fd4d63a8d19c965772a62ee1180bf.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

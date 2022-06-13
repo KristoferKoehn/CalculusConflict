@@ -7,20 +7,21 @@ func _ready():
 	
 func _spawn_asteroid():
 	var asteroid = asteroid_scene.instance()
-	
 	_set_asteroid_position(asteroid)
 	_set_asteroid_trajectory(asteroid)
+	asteroid.set_death_timer(14)
 	add_child(asteroid)
 
 func _set_asteroid_trajectory(asteroid):
 	asteroid.angular_velocity = rand_range(-4,4)
 	asteroid.angular_damp = 0
-	asteroid.linear_velocity = Vector2(rand_range(-300,300), 300)
+	var direction = Vector2(500*cos(rand_range(0.0,2.0)*PI) - asteroid.position.x, 500*sin(rand_range(0.0,2.0)*PI) - asteroid.position.y).normalized()
+	asteroid.linear_velocity =  direction * rand_range(300,500)
 	asteroid.linear_damp = 0
 
 func _set_asteroid_position(asteroid):
-	var rect = get_viewport().size
-	asteroid.position = Vector2(rand_range(0,rect.x), -100)
+	var point = rand_range(0.0,2.0)*PI
+	asteroid.position = Vector2(2600*cos(point), 2600*sin(point))
 
 
 func _on_Timer_timeout():
