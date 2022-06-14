@@ -34,6 +34,6 @@ func _ready():
 			temp = star1.instance()
 		else:
 			temp = star2.instance()
-		temp.scale = Vector2(0.08, 0.08)
+		temp.scale = Vector2(0.09, 0.09)
 		temp.position = Vector2(rand_range(-5000, 5000), rand_range(-5000,5000))
 		$ParallaxLayer2.add_child(temp)
