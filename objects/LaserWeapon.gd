@@ -9,8 +9,8 @@ var burst = 1
 var burst_delay = 0.15
 var burst_counter = null
 
-var projectiles = 10
-var shot_speed_timer = 1
+var projectiles = 1
+var shot_speed_timer = .1
 var spread_angle = PI * 44/64.0 #RADIANS!!!!
 
 #builder variables for laser

@@ -12,6 +12,7 @@ font_data = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="player_one_score" type="Label" parent="."]
+visible = false
 margin_left = 21.0
 margin_top = 658.0
 margin_right = 282.0
@@ -25,6 +26,7 @@ valign = 2
 uppercase = true
 
 [node name="player_two_score" type="Label" parent="."]
+visible = false
 margin_left = 1008.0
 margin_top = 658.0
 margin_right = 1258.0
