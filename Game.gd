@@ -9,6 +9,7 @@ var current_players = 1
 var player_colors = []
 
 func _ready():
+	
 	player_colors.append(Color(0,1.2,0,1))
 	player_colors.append(Color(1.15,0,1.15,1))
 	
