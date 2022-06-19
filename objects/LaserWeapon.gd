@@ -5,13 +5,13 @@ var player_color = null;
 
 #weapon variables-
 var can_shoot = true
-var burst = 3
+var burst = 1
 var burst_delay = 0.1
 var burst_counter = null
 
-var projectiles = 3
+var projectiles = 1
 var shot_speed_timer = .5
-var spread_angle = PI * 8.0/64.0 #RADIANS!!!!
+var spread_angle = PI * 8/64.0 #RADIANS!!!!
 
 #builder variables for laser
 var laser_damage = 5
@@ -19,7 +19,7 @@ var laser_speed = 1000
 var laser_tracking = false
 var laser_size = 1.0
 var laser_pierce = false
-
+ 
 #specific upgrade variables
 func _ready():
 	pass
