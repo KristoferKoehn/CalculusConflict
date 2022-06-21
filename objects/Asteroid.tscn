@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 45.8912
 
-[node name="Asteroid" type="RigidBody2D" groups=["asteroids"]]
+[node name="Asteroid" type="RigidBody2D" groups=["asteroids", "enemy", "flamable"]]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -20,5 +20,7 @@ shape = SubResource( 1 )
 [node name="DeathTimer" type="Timer" parent="."]
 one_shot = true
 autostart = true
+
+[node name="fire_timer" type="Timer" parent="."]
 
 [connection signal="timeout" from="DeathTimer" to="." method="_on_Timer_timeout"]

@@ -20,7 +20,6 @@ margin_bottom = 706.0
 rect_pivot_offset = Vector2( 97, -728 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "000010"
 align = 2
 valign = 2
 uppercase = true

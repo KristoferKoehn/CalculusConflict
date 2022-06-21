@@ -12,6 +12,6 @@ func _ready():
 		get_children()[i].visible = true
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	for i in range(num_players):
+		self.get_children()[i].text = str(get_node("/root/Game").player_scores[i])

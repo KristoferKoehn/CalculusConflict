@@ -8,6 +8,8 @@ var current_scene = null
 var current_players = 1
 var player_colors = []
 
+var player_scores = [0,0,0,0,0,0]
+
 func _ready():
 	
 	player_colors.append(Color(0,1.2,0,1))
