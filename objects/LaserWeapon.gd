@@ -1,5 +1,3 @@
-es (69 sloc)  2.24 KB
-
 extends Node
 
 var laser_scene = load("res://objects/Laser.tscn")

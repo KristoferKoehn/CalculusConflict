@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "entity",
+"language": "GDScript",
+"path": "res://script classes/entity.gd"
+} ]
+_global_script_class_icons={
+"entity": ""
+}
+
 [application]
 
 config/name="CalculusConflict"
