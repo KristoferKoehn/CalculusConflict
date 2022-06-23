@@ -27,6 +27,7 @@ func end_rotate():
 	rotate = 0
 
 func _ready():
+	
 	self.player_color = .get_node("/root/Game").player_colors[0]
 	.get_node("Sprite").modulate = self.player_color
 	.get_node("EngineParticles").update_color()
