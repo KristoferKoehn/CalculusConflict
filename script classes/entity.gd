@@ -6,7 +6,7 @@ var out_of_bounds = false
 var bounds_velocity = Vector2(0,0)
 var player_color = null
 
-var max_thrust = 600
+export var max_thrust = 600
 var velocity = Vector2(0,0)
 var velocity_damping = 1.02
 var acceleration = 15
@@ -22,9 +22,9 @@ var shield_resistance = 1
 var shield_on = true
 
 # === weapon values ===
-var burst = 1
-var burst_delay = 0.1
-var projectiles = 1
+export var burst = 1
+export var burst_delay = 0.1
+export var projectiles = 1
 var shot_speed_timer = .5
 var spread_angle = PI * 8/64.0 #RADIANS!!!!
 

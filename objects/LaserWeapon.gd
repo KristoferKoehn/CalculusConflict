@@ -15,7 +15,7 @@ func shoot():
 	if can_shoot:
 		can_shoot = false
 		if get_parent().burst > 1:
-			get_parent().burst_counter = get_parent().burst - 2
+			burst_counter = get_parent().burst - 2
 			_fire_laser()
 			$burst_timer.wait_time = get_parent().burst_delay
 			$burst_timer.start()
@@ -48,7 +48,7 @@ func _fire_laser():
 		laser.set_rotation(get_parent().rotation)
 		laser.set_speed(get_parent().velocity.length()+get_parent().laser_speed)
 		laser.set_color(player_color)
-		laser.global_position = get_parent().global_position + direction_vector * -55
+		laser.global_position = get_parent().global_position + direction_vector * -5
 		get_node("/root").get_children()[0].add_child(laser)
 
 func _on_Timer_timeout():
@@ -59,7 +59,7 @@ func update_color():
 
 func _on_burst_timer_timeout():
 	_fire_laser()
-	if get_parent().burst_counter > 0:
+	if burst_counter > 0:
 		burst_counter = burst_counter - 1
 		$burst_timer.wait_time = get_parent().burst_delay
 		$burst_timer.start()

@@ -8,6 +8,7 @@
 
 [node name="ship" type="KinematicBody2D" groups=["camera target", "player"]]
 script = ExtResource( 3 )
+burst = 5
 
 [node name="Sprite" type="Sprite" parent="."]
 modulate = Color( 0, 1.2, 0, 1 )
