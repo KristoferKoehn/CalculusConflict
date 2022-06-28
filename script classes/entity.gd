@@ -11,7 +11,7 @@ var velocity = Vector2(0,0)
 var velocity_damping = 1.02
 var acceleration = 15
 var rotation_speed = .8
-var rotation_max = 60
+var rotation_max = 30
 var angular_velocity = 0
 var angular_damping = 1.15
 
