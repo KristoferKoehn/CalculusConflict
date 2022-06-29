@@ -20,7 +20,6 @@ func set_color(color):
 func _process(delta):
 	self.position += direction * projectile_speed * delta
 
-
 func _on_Timer_timeout():
 	queue_free()
 
@@ -42,7 +41,6 @@ func _on_Laser_body_shape_entered(_body_rid, body, _body_shape_index, _local_sha
 				if fire:
 					body.last_player_damaged = player_index
 					body.ignite(fire_magnitude, fire_length, fire_delay)
-				
 			else:
 				body.last_player_damaged = player_index
 			#end fire check. This needs to be better.

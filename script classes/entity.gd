@@ -5,6 +5,7 @@ class_name entity
 var out_of_bounds = false
 var bounds_velocity = Vector2(0,0)
 var player_color = Color(1,1,1,1)
+var iff_index = -1
 
 export var max_thrust = 600
 var velocity = Vector2(0,0)
@@ -35,7 +36,6 @@ var laser_tracking = false
 var laser_size = 1.0
 var laser_pierce = false
 var laser_fire = false
-# 
 
 # === end weapon values ====
 

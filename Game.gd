@@ -7,14 +7,21 @@ var current_scene = null
 #player management stuff
 var current_players = 1
 var player_colors = []
-
 var player_scores = [0,0,0,0,0,0]
 
+var iff_matrix = [[0,1,1,1,1,1,1,1],
+[1,0,0,0,0,0,0,1],
+[1,0,0,0,0,0,0,1],
+[1,0,0,0,0,0,0,1],
+[1,0,0,0,0,0,0,1],
+[1,0,0,0,0,0,0,1],
+[1,0,0,0,0,0,0,1],
+[1,1,1,1,1,1,1,0]]
+
 func _ready():
-	
 	player_colors.append(Color(0,1.2,0,1))
 	player_colors.append(Color(1.15,0,1.15,1))
-	
+
 	var title = start_screen.instance()
 	title.connect("start_arena", self, "_on_load_arena")
 	self.add_child(title)

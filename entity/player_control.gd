@@ -6,6 +6,8 @@ func _ready():
 	player_ship = get_node("ship")
 	player_ship.add_to_group("player")
 
+func set_player_index(index):
+	player_ship.iff_index = index
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
