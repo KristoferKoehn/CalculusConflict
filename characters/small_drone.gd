@@ -7,8 +7,9 @@ var camera_targeted = false
 
 func _ready():
 	update_colors(player_color)
-	var acceleration = 10
-	pass
+	self.acceleration = 10
+	self.rotation_speed = .3
+	self.shot_speed_timer = 2
 
 func thrust():
 	self.velocity += Vector2(cos(self.rotation - PI/2.0), sin(self.rotation - PI/2.0)) * self.acceleration

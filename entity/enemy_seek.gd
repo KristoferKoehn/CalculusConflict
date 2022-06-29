@@ -29,9 +29,9 @@ func _process(delta):
 		var T = ship.global_position.angle_to_point(closest.global_position) 
 		var C = ship.rotation + PI/2.0
 		var angle_difference = fmod((T - C + (3.0 * PI)), 2.0*PI) - PI
-		if angle_difference  > 0.2:
+		if angle_difference  > 0.02:
 			ship.rotate_left()
-		elif angle_difference < -0.2:
+		elif angle_difference < -0.02:
 			ship.rotate_right()
 		else:
 			ship.end_rotate()

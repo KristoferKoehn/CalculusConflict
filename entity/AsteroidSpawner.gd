@@ -23,6 +23,5 @@ func _set_asteroid_position(asteroid):
 	var point = rand_range(0.0,2.0)*PI
 	asteroid.position = Vector2(2600*cos(point), 2600*sin(point))
 
-
 func _on_Timer_timeout():
 	_spawn_asteroid()

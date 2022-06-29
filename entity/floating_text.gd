@@ -13,9 +13,6 @@ func _ready():
 	tween.interpolate_property(self, 'scale', Vector2(1,1), Vector2(0.1,0.1), 0.7, Tween.TRANS_LINEAR, Tween.EASE_OUT, 0.1)
 	tween.start()
 	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 func set_color(color):
 	text_color = color
 

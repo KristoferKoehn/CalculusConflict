@@ -51,5 +51,3 @@ func ignite(magnitude, length, delay):
 		self.on_fire = true
 		self.fire_timer.wait_time = delay
 		self.fire_timer.start()
-	
-	
