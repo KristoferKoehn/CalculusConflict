@@ -4,7 +4,7 @@ var asteroid_scene = load("res://objects/Asteroid.tscn")
 
 func _ready():
 	_spawn_asteroid()
-	
+
 func _spawn_asteroid():
 	var asteroid = asteroid_scene.instance()
 	_set_asteroid_position(asteroid)

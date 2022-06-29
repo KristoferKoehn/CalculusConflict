@@ -3,6 +3,12 @@ extends entity
 var shooting = false
 var thrusting = false
 var rotate = 0.0
+var camera_targeted = false
+
+func _ready():
+	update_colors(player_color)
+	var acceleration = 10
+	pass
 
 func thrust():
 	self.velocity += Vector2(cos(self.rotation - PI/2.0), sin(self.rotation - PI/2.0)) * self.acceleration
@@ -26,18 +32,14 @@ func rotate_right(magnitude = 1):
 func end_rotate():
 	rotate = 0
 
-func _ready():
-	self.player_color = .get_node("/root/Game").player_colors[0]
-	.get_node("Sprite").modulate = self.player_color
-	.get_node("EngineParticles").update_color()
-	.get_node("LaserWeapon").update_color()
-
 func _process(_delta):
 	if shooting:
 		.get_node("LaserWeapon").shoot()
-	else:
-		pass
-
+	
+	if self.is_in_group("camera target") && !camera_targeted:
+		self.get_node("/root/Game/Arena_Level/MultiTargetCamera").add_target(self)
+		camera_targeted = true
+	
 func _physics_process(delta: float) -> void:
 
 	if (rotate > 0):
@@ -57,3 +59,9 @@ func _physics_process(delta: float) -> void:
 	else:
 		.get_node("EngineNoise").stop()
 		.get_node("EngineParticles").emitting = false
+
+func update_colors(color):
+	self.player_color = color
+	self.get_node("Sprite").modulate = self.player_color
+	self.get_node("EngineParticles").update_color()
+	self.get_node("LaserWeapon").update_color() 

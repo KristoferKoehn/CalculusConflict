@@ -5,7 +5,6 @@ var health = 15
 var last_player_damaged = -1
 var team = 0
 
-
 var on_fire = false
 var fire_magnitude = 0
 var fire_tick_count = 0

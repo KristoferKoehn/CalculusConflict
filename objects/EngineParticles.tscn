@@ -2,12 +2,14 @@
 
 [ext_resource path="res://objects/EngineParticles.gd" type="Script" id=1]
 
-[sub_resource type="Gradient" id=2]
-offsets = PoolRealArray( 0.192547, 0.467391, 0.732919, 1 )
-colors = PoolColorArray( 0, 0.967773, 1, 1, 1, 0.619608, 0, 1, 0.178223, 0.178223, 0.178223, 1, 0, 0, 0, 0 )
+[sub_resource type="Gradient" id=10]
+resource_local_to_scene = true
+offsets = PoolRealArray( 0.467391, 0.732919, 1 )
+colors = PoolColorArray( 1, 0.619608, 0, 1, 0.178223, 0.178223, 0.178223, 1, 0, 0, 0, 0 )
 
-[sub_resource type="GradientTexture" id=3]
-gradient = SubResource( 2 )
+[sub_resource type="GradientTexture" id=9]
+resource_local_to_scene = true
+gradient = SubResource( 10 )
 
 [sub_resource type="Curve" id=4]
 max_value = 100.0
@@ -22,7 +24,8 @@ _data = [ Vector2( 0, 0.5 ), 0.0, 0.0, 0, 0, Vector2( 0.88587, 1 ), 2.00727, 0.0
 [sub_resource type="CurveTexture" id=7]
 curve = SubResource( 6 )
 
-[sub_resource type="ParticlesMaterial" id=1]
+[sub_resource type="ParticlesMaterial" id=8]
+resource_local_to_scene = true
 emission_shape = 1
 emission_sphere_radius = 10.0
 flag_disable_z = true
@@ -39,11 +42,10 @@ damping = 25.0
 damping_curve = SubResource( 5 )
 scale = 15.0
 scale_curve = SubResource( 7 )
-color_ramp = SubResource( 3 )
+color_ramp = SubResource( 9 )
 
 [node name="EngineParticles" type="Particles2D"]
-modulate = Color( 1.3, 1.2, 1.2, 1 )
 amount = 24
 local_coords = false
-process_material = SubResource( 1 )
+process_material = SubResource( 8 )
 script = ExtResource( 1 )

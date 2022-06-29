@@ -12,6 +12,7 @@ func _ready():
 	pass
 
 func shoot():
+	update_color()
 	if can_shoot:
 		can_shoot = false
 		if get_parent().burst > 1:
@@ -27,6 +28,7 @@ func shoot():
 		pass
 
 func _fire_laser():
+	update_color()
 	if get_parent().projectiles > 1:
 		var spread_step = get_parent().spread_angle/(1.0 * get_parent().projectiles - 1)
 		var spread_start = get_parent().rotation - get_parent().spread_angle/2.0

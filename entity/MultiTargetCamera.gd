@@ -1,10 +1,10 @@
 extends Camera2D
 
-export var move_speed = 0.5  # camera position lerp speed
+export var move_speed = 0.6  # camera position lerp speed
 export var zoom_speed = 0.25  # camera zoom lerp speed
 export var min_zoom = 1.5  # camera won't zoom closer than this
 export var max_zoom = 5  # camera won't zoom farther than this
-export var margin = Vector2(400, 200)  # include some buffer area around targets
+export var margin = Vector2(400, 400)  # include some buffer area around targets
 
 var targets = []  # Array of targets to be tracked.
 
@@ -37,6 +37,7 @@ func _process(_delta):
 	zoom = lerp(zoom, Vector2.ONE * z, zoom_speed)
 	
 func add_target(t):
+	print("Added target??")
 	if not t in targets:
 		targets.append(t)
 

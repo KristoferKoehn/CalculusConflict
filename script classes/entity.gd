@@ -4,13 +4,13 @@ class_name entity
 
 var out_of_bounds = false
 var bounds_velocity = Vector2(0,0)
-var player_color = null
+var player_color = Color(1,1,1,1)
 
 export var max_thrust = 600
 var velocity = Vector2(0,0)
 var velocity_damping = 1.02
 var acceleration = 15
-var rotation_speed = .8
+var rotation_speed = .7
 var rotation_max = 30
 var angular_velocity = 0
 var angular_damping = 1.15
