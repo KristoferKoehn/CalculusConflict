@@ -5,6 +5,7 @@ var player_ship = null
 func _ready():
 	player_ship = get_node("ship")
 	player_ship.add_to_group("player")
+	set_player_index(1)
 
 func set_player_index(index):
 	player_ship.iff_index = index

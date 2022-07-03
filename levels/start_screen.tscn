@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://objects/Moving_Starfield.tscn" type="PackedScene" id=1]
+[ext_resource path="res://objects/backgrounds/Moving_Starfield.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/images/graphics/title.png" type="Texture" id=2]
 [ext_resource path="res://assets/images/graphics/settings_button.png" type="Texture" id=3]
 [ext_resource path="res://assets/images/graphics/start_button.png" type="Texture" id=4]

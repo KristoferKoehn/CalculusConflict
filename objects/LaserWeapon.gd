@@ -38,7 +38,7 @@ func _fire_laser():
 			
 			laser.set_direction_vector(direction_vector)
 			laser.set_rotation(spread_start + (n*spread_step))
-			
+			laser.source = self.get_parent()
 			laser.set_speed(get_parent().velocity.length()+get_parent().laser_speed)
 			laser.set_color(player_color)
 			laser.global_position = get_parent().global_position + direction_vector * -55
@@ -50,7 +50,8 @@ func _fire_laser():
 		laser.set_rotation(get_parent().rotation)
 		laser.set_speed(get_parent().velocity.length()+get_parent().laser_speed)
 		laser.set_color(player_color)
-		laser.global_position = get_parent().global_position + direction_vector * -5
+		laser.global_position = get_parent().global_position + direction_vector * -55
+		laser.source = self.get_parent()
 		get_node("/root").get_children()[0].add_child(laser)
 
 func _on_Timer_timeout():

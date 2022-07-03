@@ -1,7 +1,7 @@
 extends Node2D
 
-var star1 = load("res://objects/bg_star_moving.tscn")
-var star2 = load("res://objects/bg_star2_moving.tscn")
+var star1 = load("res://objects/backgrounds/bg_star_moving.tscn")
+var star2 = load("res://objects/backgrounds/bg_star2_moving.tscn")
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"

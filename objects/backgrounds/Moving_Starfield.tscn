@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://objects/Moving_Starfield.gd" type="Script" id=1]
+[ext_resource path="res://objects/backgrounds/Moving_Starfield.gd" type="Script" id=1]
+
 
 [node name="Moving_Starfield" type="Node2D"]
 script = ExtResource( 1 )

@@ -72,20 +72,5 @@ func _physics_process(delta):
 		bounds_velocity = bounds_velocity/(1000.0)
 	velocity += bounds_velocity
 
-
-func _on_fire_timeout():
-	if fire_tick_count == fire_length:
-		get_node("ship/fire_timer").stop()
-	else:
-		pass
-		#put some shit here idk
-	
-func ignite(magnitude, length, delay):
-	if on_fire:
-		self.fire_tick_count = 0
-	
-	self.fire_magnitude = magnitude
-	self.fire_length = length
-	self.on_fire = true
-	get_node("ship/fire_timer").wait_time = delay
-	get_node("ship/fire_timer").start()
+func damage(damageSource):
+	pass

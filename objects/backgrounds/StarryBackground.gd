@@ -1,7 +1,7 @@
 extends ParallaxBackground
 
-var star1 = load("res://objects/bg_star.tscn")
-var star2 = load("res://objects/bg_star2.tscn")
+var star1 = load("res://objects/backgrounds/bg_star.tscn")
+var star2 = load("res://objects/backgrounds/bg_star2.tscn")
 
 func _ready():
 	for _i in range(0,500):

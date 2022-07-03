@@ -35,3 +35,6 @@ func _on_load_arena():
 	self.remove_child(current_scene)
 	self.add_child(next_level)
 	current_scene = next_level
+
+func hostility(this, that):
+	return iff_matrix[this.iff_index][that.iff_index]

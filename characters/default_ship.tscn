@@ -48,7 +48,7 @@ scale = 15.0
 scale_curve = SubResource( 7 )
 color_ramp = SubResource( 9 )
 
-[node name="ship" type="KinematicBody2D" groups=["camera target"]]
+[node name="ship" type="KinematicBody2D" groups=["camera target", "ship"]]
 script = ExtResource( 3 )
 burst = 5
 

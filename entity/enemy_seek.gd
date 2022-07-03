@@ -1,13 +1,18 @@
 extends Node
 
 var ship = null
-var team = -1
+var iff_index = 7
 var targets = []
 var closest = null
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	ship = get_node("ship")
 	ship.update_colors(Color(1.2,0,0,1))
+	set_hostility_index(7)
+
+func set_hostility_index(index):
+	ship.iff_index = index
+	iff_index = index
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("player") && body != ship:

@@ -5,6 +5,8 @@ var thrusting = false
 var rotate = 0.0
 var camera_targeted = false
 
+
+
 func _ready():
 	update_colors(player_color)
 	self.acceleration = 10
