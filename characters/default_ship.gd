@@ -1,16 +1,18 @@
 extends entity
 
+
+
 var shooting = false
 var thrusting = false
-var rotate = 0.0
 var camera_targeted = false
 
 func _ready():
 	update_colors(player_color)
-	pass
+	stat_manager = get_node("stat_manager")
+	stat_manager.initialize()
 
 func thrust():
-	self.velocity += Vector2(cos(self.rotation - PI/2.0), sin(self.rotation - PI/2.0)) * self.acceleration
+	self.velocity += Vector2(cos(self.rotation - PI/2.0), sin(self.rotation - PI/2.0)) * stat_manager.get_stat(enums.modifier_stat.thrust_acceleration)
 	thrusting = true
 
 func end_thrust():
@@ -33,7 +35,7 @@ func end_rotate():
 
 func _process(_delta):
 	if shooting:
-		.get_node("LaserWeapon").shoot()
+		weapon.shoot()
 	
 	if self.is_in_group("camera target") && !camera_targeted:
 		self.get_node("/root/Game/Arena_Level/MultiTargetCamera").add_target(self)
@@ -41,16 +43,6 @@ func _process(_delta):
 	
 func _physics_process(delta: float) -> void:
 
-	if (rotate > 0):
-		if self.angular_velocity <= -self.rotation_max:
-			self.angular_velocity = self.rotation_max
-		else:
-			self.angular_velocity += self.rotation_speed * rotate
-	if (rotate < 0):
-		if self.angular_velocity >= self.rotation_max:
-			self.angular_velocity = self.rotation_max
-		else:
-			self.angular_velocity += self.rotation_speed * rotate
 	if (thrusting):
 		.get_node("EngineParticles").emitting = true
 		if !.get_node("EngineNoise").playing:

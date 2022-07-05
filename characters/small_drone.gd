@@ -2,19 +2,20 @@ extends entity
 
 var shooting = false
 var thrusting = false
-var rotate = 0.0
 var camera_targeted = false
 
 
 
 func _ready():
 	update_colors(player_color)
-	self.acceleration = 10
-	self.rotation_speed = .3
-	self.shot_speed_timer = 2
-
+	stat_block[enums.modifier_stat.thrust_acceleration] = 5
+	stat_block[enums.modifier_stat.rotate_accel] = .3
+	stat_block[enums.modifier_stat.fire_rate] = 2
+	stat_block[enums.modifier_stat.burst_count] = 2
+	stat_manager.initialize()
+	
 func thrust():
-	self.velocity += Vector2(cos(self.rotation - PI/2.0), sin(self.rotation - PI/2.0)) * self.acceleration
+	self.velocity += Vector2(cos(self.rotation - PI/2.0), sin(self.rotation - PI/2.0)) * stat_manager.get_stat(enums.modifier_stat.thrust_acceleration)
 	thrusting = true
 
 func end_thrust():
@@ -45,16 +46,6 @@ func _process(_delta):
 	
 func _physics_process(delta: float) -> void:
 
-	if (rotate > 0):
-		if self.angular_velocity <= -self.rotation_max:
-			self.angular_velocity = self.rotation_max
-		else:
-			self.angular_velocity += self.rotation_speed * rotate
-	if (rotate < 0):
-		if self.angular_velocity >= self.rotation_max:
-			self.angular_velocity = self.rotation_max
-		else:
-			self.angular_velocity += self.rotation_speed * rotate
 	if (thrusting):
 		.get_node("EngineParticles").emitting = true
 		if !.get_node("EngineNoise").playing:
