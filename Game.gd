@@ -1,5 +1,6 @@
 extends Node2D
 
+var default_ship_scene = load("res://characters/default_ship.tscn")
 var arena = load("res://levels/Arena_Level.tscn")
 var start_screen = load("res://levels/start_screen.tscn")
 var current_scene = null
@@ -8,6 +9,7 @@ var current_scene = null
 var current_players = 1
 var player_colors = []
 var player_scores = [0,0,0,0,0,0]
+var player_ships = []
 
 var iff_matrix = [[0,1,1,1,1,1,1,1],
 [1,0,0,0,0,0,0,1],
@@ -19,6 +21,7 @@ var iff_matrix = [[0,1,1,1,1,1,1,1],
 [1,1,1,1,1,1,1,0]]
 
 func _ready():
+	player_ships.append(default_ship_scene.instance())
 	player_colors.append(Color(0,1.2,0,1))
 	player_colors.append(Color(1.15,0,1.15,1))
 

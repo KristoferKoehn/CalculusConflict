@@ -11,7 +11,6 @@
 [ext_resource path="res://entity/ship_controllers/enemy_seek.tscn" type="PackedScene" id=9]
 [ext_resource path="res://characters/small_drone.tscn" type="PackedScene" id=10]
 
-
 [sub_resource type="Environment" id=1]
 background_mode = 4
 fog_color = Color( 0.501961, 0.6, 0.701961, 1 )
@@ -29,7 +28,6 @@ script = ExtResource( 6 )
 [node name="player_control" parent="." instance=ExtResource( 8 )]
 
 [node name="ship" parent="player_control" instance=ExtResource( 1 )]
-burst = 1
 
 [node name="MultiTargetCamera" parent="." instance=ExtResource( 4 )]
 process_mode = 0
