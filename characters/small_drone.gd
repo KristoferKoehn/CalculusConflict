@@ -4,12 +4,10 @@ var shooting = false
 var thrusting = false
 var camera_targeted = false
 
-
-
 func _ready():
 	update_colors(player_color)
-	stat_block[enums.modifier_stat.thrust_acceleration] = 5
-	stat_block[enums.modifier_stat.rotate_accel] = .3
+	stat_block[enums.modifier_stat.thrust_acceleration] = 20
+	stat_block[enums.modifier_stat.rotate_accel] = .2
 	stat_block[enums.modifier_stat.fire_rate] = 2
 	stat_block[enums.modifier_stat.burst_count] = 2
 	stat_manager.initialize()

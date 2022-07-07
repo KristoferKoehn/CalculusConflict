@@ -33,7 +33,7 @@ func shoot():
 func _fire_laser():
 	update_color()
 	if stat_manager.get_stat(enums.modifier_stat.bullet_count) > 1:
-		var spread_step = get_parent().spread_angle/(1.0 * get_parent().projectiles - 1)
+		var spread_step = get_parent().spread_angle/(1.0 * stat_manager.get_stat(enums.modifier_stat.bullet_count) - 1)
 		var spread_start = get_parent().rotation - get_parent().spread_angle/2.0
 		for n in range(0, stat_manager.get_stat(enums.modifier_stat.bullet_count)):
 			var direction_vector = Vector2(cos((spread_start + (n*spread_step)) + PI/2.0), sin((spread_start + (n *spread_step)) + PI/2.0))

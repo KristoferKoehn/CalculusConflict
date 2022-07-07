@@ -8,7 +8,7 @@ var current_scene = null
 #player management stuff
 var current_players = 1
 var player_colors = []
-var player_scores = [0,0,0,0,0,0]
+var player_scores = [0,0,0,0,0,0,0,0]
 var player_ships = []
 
 var iff_matrix = [[0,1,1,1,1,1,1,1],
@@ -41,3 +41,6 @@ func _on_load_arena():
 
 func hostility(this, that):
 	return iff_matrix[this.iff_index][that.iff_index]
+
+func connect_score(ship_node):
+	pass

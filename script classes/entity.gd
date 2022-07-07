@@ -12,12 +12,14 @@ signal start_thrust
 signal end_thrust
 signal fired
 signal rotated
+signal destroyed
+
 
 ##{hull_max, hull_regen, hull_plating, shield_max, shield_regen, shield_plating,
 ##thrust_max, thrust_acceleration, rotate_max, rotate_accel, shot_damage, shot_velocity, bullet_count, 
 #tracking_magnetism, burst_count, burst_delay, fire_rate, construct_basic_max, construct_max, construct_advanced_max, construct_firerate
-##construct_hull_max, construct_hull_regen, construct_shield_max, construct_shield_regen}
-var stat_block = [100, 5, 0, 50, 4, 0, 600, 15 ,30, 0.7, 5, 1000, 1 ,0,1, 0.2, 0.5, 0,0,0,0,0,0,0,0]
+##construct_hull_max, construct_hull_regen, construct_shield_max, construct_shield_regen, ship_score}
+var stat_block = [100, 5, 0, 50, 4, 0, 600, 15 ,30, 0.7, 5, 1000, 4 ,0,1, 0.2, 0.5, 0,0,0,0,0,0,0,0, 100]
 
 var out_of_bounds = false
 var bounds_velocity = Vector2(0,0)
@@ -39,7 +41,6 @@ var shot_speed_timer = .5
 var spread_angle = PI * 8/64.0 #RADIANS!!!!
 
 
-
 var last_player_damaged = -1
 
 var on_fire = false
@@ -56,8 +57,9 @@ func _ready():
 	pass
 
 func _process(delta):
-	pass
-
+	if hull < 1:
+		explode()
+		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	self.rotation += delta * angular_velocity
@@ -102,3 +104,6 @@ func apply_damage(incoming_damage, source):
 		adjusted_damage = incoming_damage - stat_manager.get_stat(enums.modifier_stat.hull_plating)
 		hull = hull - adjusted_damage
 		return adjusted_damage
+
+func explode():
+	emit_signal("destroyed", last_player_damaged, stat_manager.get_stat(enums.modifier_stat.ship_score))

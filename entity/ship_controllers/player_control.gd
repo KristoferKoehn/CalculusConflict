@@ -3,10 +3,10 @@ extends Node
 var player_ship = null
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	set_player(1, get_node("ship"))
 
 func set_player(index, ship_node):
-	self.add_child(ship_node)
+	#self.add_child(ship_node)
 	player_ship = ship_node
 	player_ship.add_to_group("player")
 	player_ship.iff_index = index
